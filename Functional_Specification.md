@@ -85,17 +85,71 @@ she needs to be able to estimate her grades in each class so she knows how she's
 # Functional Requirements
 
 In order to meet the needs of Pam, Ryan, Michael, and Erin, Tardigrade will need functionality in four fundamental realms,
-with some overlap and coordination necessary between them:
+with some overlap and coordination necessary between them.
 
 #### Pods, Institutions, and Enrollment
 
 A Pod is a group of family and friends who share (some) data. All information stored by Tardigrade is Pod-centric and
 visible only to users belonging to that Pod. Users can be members of multiple Pods, and those who are have the ability
-to copy some data between Pods to which they belong. A Pod member is assigned a single Pod Role, which dictates what
-privileges that user has in the Pod.
+to copy some data between Pods to which they belong.
+
+An Institution is a named school, camp, workplace, etc. -- an entity that one would attend on a regular basis. An Institution
+may be associated with one or more Sessions, where a session could be a school year, a single college class, a soccer season,
+or even an unbounded employment. People (who may or not be Users) may then be Enrolled in one or more Sessions.
 
 #### Schedules and Calendars
 
+A Session has a Schedule, and a set of arbitrary negative (e.g., a holiday or snow day) and positive (e.g., a Saturday make-up 
+school day in a year that had too many snow days) exceptions to that schedule. A Schedule consists of one or more Schedule Components.
+A Schedule Component is a day of the week along with the start/end times for that day. Repetitions are permitted to allow for split 
+schedules (e.g. Monday 8:30-10:30, Monday 2:30-4:30, Wednesday 5:30-9:30). Schedule Exceptions may be for an entire schedule 
+component, multiple schedule components, or a partial schedule component (e.g., a half-day or delayed start)
+
+Furthermore, an Enrollment has its own set of schdule exceptions (e.g., a sick day, or an early dismissal for a doctor's appointment)
+
+Compiling together a (potentially all-inclusive) subset of this scheduling data, Tardigrade is then able to produce customizable 
+iCalendar output for web subscription. These c
+
 #### Contacts and Contact Information
 
-#### Grades and Assignements
+#### Grades and Assignments
+
+
+
+
+
+
+
+
+
+
+
+
+### Permissions Model
+
+Role-based Access Control (RBAC) is used to customize the privileges of various users of the system. A Pod member is assigned 
+a single Pod Role, which dictates what privileges that user has in the Pod.
+
+#### Available Privileges
+
+##### Pods
+
+* Rename Pod
+* Invite to Pod (by email address)
+* Remove Member from Pod
+* Assign Member's Pod Role
+* Create Pod Role
+* Delete Pod Role
+* Edit Pod Role (name and privileges)
+
+##### Institutions
+
+* Create Institution
+* Edit Institution
+* Delete Institution
+* Create Institution Session
+* Edit Institution Session
+* Delete Institution Session
+
+##### Enrollment
+
