@@ -108,13 +108,27 @@ component, multiple schedule components, or a partial schedule component (e.g., 
 Furthermore, an Enrollment has its own set of schdule exceptions (e.g., a sick day, or an early dismissal for a doctor's appointment)
 
 Compiling together a (potentially all-inclusive) subset of this scheduling data, Tardigrade is then able to produce customizable 
-iCalendar output for web subscription. These c
+iCalendar output designed for online subscription. Calendar information that can be output includes block scheduling, schedule exceptions, and transportation responsibilities, on a per-enrollment basis.
 
 #### Contacts and Contact Information
 
+Tardigrade also supports keeping track of Contacts -- people without login privileges. These might be Enrollees (e.g., the 
+son/daughter/dependent of a Pod Member), classmates of an Enrollee, or parents/guardians of a classmate. Optional metadata is stored for 
+each Contact including name, relationship (to another Contact), birthday/birthdate, address, and arbitrary contact information such as
+phone number, email address, social media accounts, etc.
+
+This facilitates features like generating a list of emails of parents in Sam's 1st grade class, or visuallu mapping the locations of Steve's 
+friends to determine an efficient playdate location.
+
 #### Grades and Assignments
 
+An Assignment is a past or future responsibility in an Enrollment. This could be a school homework, project, quiz, test, or exam, or a work
+project, or even a soccer game. Assignments may optionally be given weights (e.g., a homework worth 10% of the term grade), and Grades. Grades
+have a value and a scale, allowing for representations like "A" (on an A to F scale), "E" (on an Excellent/Good/Average/Poor scale), 4.0 (on
+a GPA scale), or arbitrary decimal or fractional values. Combined with their weights, these can be used to accurately calculate term Grades
+when grading structures are transparent, or estimate them otherwise.
 
+Report cards/final grades can also be tracked agains the Enrollment, and GPAs calculated from those results.
 
 
 
