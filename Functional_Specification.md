@@ -128,10 +128,14 @@ have a value and a scale, allowing for representations like "A" (on an A to F sc
 a GPA scale), or arbitrary decimal or fractional values. Combined with their weights, these can be used to accurately calculate term Grades
 when grading structures are transparent, or estimate them otherwise.
 
-Report cards/final grades can also be tracked agains the Enrollment, and GPAs calculated from those results.
+Report cards/final grades can also be tracked agains the Enrollment, and GPAs calculated from those results, to create a complete
+scholastic history across all classes/grades/years tracked in the application.
 
+# Business Rules
 
-
+Being a member of a Pod implicitly grants the ability to view/search data associated with that Pod, except for data related to Grades
+(including assignments and report cards), which requires an explicit Pod Role Privilege. Modifying data always requires an explicit
+privilege to be set on the user's Pod Role. Users can never see or modify data associated with Pods to which they are not a member.
 
 
 
@@ -148,22 +152,48 @@ a single Pod Role, which dictates what privileges that user has in the Pod.
 
 ##### Pods
 
-* Rename Pod
-* Invite to Pod (by email address)
-* Remove Member from Pod
-* Assign Member's Pod Role
-* Create Pod Role
-* Delete Pod Role
-* Edit Pod Role (name and privileges)
+* Administer Pod
+	- Rename Pod
+	- Invite to Pod (by email address)
+	- Remove Member from Pod
+	- Assign Member's Pod Role
+	- Create Pod Role
+	- Delete Pod Role
+	- Edit Pod Role (name, privileges)
+* Manage Pod Contacts
+	- Create Pod Contact (name, relationship to existing, contact info)
+	- Edit Pod Contact
+	- Delete Pod Contact
 
 ##### Institutions
 
-* Create Institution
-* Edit Institution
-* Delete Institution
-* Create Institution Session
-* Edit Institution Session
-* Delete Institution Session
+* Manage Institutions
+	- Create Institution (name, address)
+	- Edit Institution
+	- Delete Institution
+	- Create Institution Session (name, schedule, exceptions)
+	- Edit Institution Session
+	- Delete Institution Session
 
 ##### Enrollment
+
+* Manage Enrollments
+	- Add Enrollment (pod contact, session, exceptions)
+	- Edit Enrollment
+	- Delete Enrollment
+	- Add Enrollment Field
+	- Edit Enrollment Field
+	- Delete Enrollment Field
+
+#### Grades
+
+* Create Assignment
+* Edit Assignment
+* Delete Assignment
+* Create Performance Scale
+* Edit Performance Scale
+* Delete Performance Scale
+* Add Report Card
+* Edit Report Card
+* Delete Report Card
 
